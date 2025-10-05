@@ -1,6 +1,4 @@
 Attribute VB_Name = "ModuloConstantes"
-Option Explicit
-
 ' ========== CONSTANTES DE MEMORIA ==========
 Public Const MEM_SIZE As Long = 65536
 Public Const MEM_START As Long = 0
@@ -19,7 +17,7 @@ Public Const STAGE_EXECUTE As Integer = 2
 Public Const STAGE_MEMORY As Integer = 3
 Public Const STAGE_WRITEBACK As Integer = 4
 
-' ========== CONSTANTES DE CACHÉ ==========
+' ========== CONSTANTES DE CACH? ==========
 Public Const CACHE_SIZE As Long = 1024
 Public Const CACHE_LINE_SIZE As Long = 64
 Public Const CACHE_LINES As Long = 16
@@ -47,8 +45,9 @@ Public Enum INSTRUCTION_TYPE
     STACK = 4
 End Enum
 
-' ========== CONSTANTES DE VISUALIZACIÓN ==========
+' ========== CONSTANTES DE VISUALIZACI?N ==========
 Public Const DISPLAY_ROWS As Integer = 25
 Public Const DISPLAY_COLS As Integer = 80
 Public Const MEMORY_VIEW_ROWS As Integer = 16
 Public Const MEMORY_VIEW_COLS As Integer = 8
+
