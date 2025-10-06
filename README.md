@@ -100,6 +100,6 @@ Simulador-de-Arquitectura-x86/
 
 ### Documentación de Proyecto: 
 
-[Google Docs] (https://docs.google.com/document/d/1TJP4KwBfWincHVuankqWyCwxlPexCR8OhsUQR56UT3c/edit?usp=sharing)
+[Google Docs](https://docs.google.com/document/d/1TJP4KwBfWincHVuankqWyCwxlPexCR8OhsUQR56UT3c/edit?usp=sharing)
 ### Presentación: 
-[Canvas] (https://www.canva.com/design/DAG026bozAs/_7BWP3KhhOYfSTNlDX9V-g/edit?utm_content=DAG026bozAs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+[Canvas](https://www.canva.com/design/DAG026bozAs/_7BWP3KhhOYfSTNlDX9V-g/edit?utm_content=DAG026bozAs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
