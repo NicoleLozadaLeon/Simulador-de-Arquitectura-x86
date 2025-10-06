@@ -24,15 +24,25 @@ Este proyecto consiste en el desarrollo de un simulador interactivo de arquitect
 - Documentación: GoogleDocs
 
 ## 📁 Estructura del Proyecto
+
 Simulador-de-Arquitectura-x86/
+
 │
+
 ├── 📂 CPU/                 # Simulación de Unidad de Control, ALU y Registros
+
 ├── 📂 grafico/             # Componentes de visualización e interfaz
+
 ├── 📂 memoria/             # Gestión de RAM, Caché y Memoria Virtual
+
 ├── 📂 pipeline/            # Simulación del pipeline de instrucciones
+
 ├── 📂 traductor/           # Traducción de código (funcionalidad opcional)
+
 ├── 📄 programa.cls         # Clase principal del programa
+
 └── 📄 Simulador.xlsm       # Archivo principal
+
 └── 📄 README.md           
 
 # ⚡ Funcionalidades Implementadas
