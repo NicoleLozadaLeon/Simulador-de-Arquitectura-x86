@@ -13,7 +13,7 @@ Public Sub ConfigurarInterfaz()
         
         ' Título
         .Range("A1:Z1").Merge
-        .Range("A1").Value = "SIMULADOR x86 – ARQUITECTURA EN TIEMPO REAL"
+        .Range("A1").value = "SIMULADOR x86 – ARQUITECTURA EN TIEMPO REAL"
         .Range("A1").Font.Size = 16
         .Range("A1").Font.Bold = True
         .Range("A1").HorizontalAlignment = xlCenter
@@ -21,50 +21,50 @@ Public Sub ConfigurarInterfaz()
         .Range("A1").Font.Color = RGB(255, 255, 255)
         
         ' === REGISTROS (izquierda) ===
-        .Range("A3").Value = "REGISTROS"
+        .Range("A3").value = "REGISTROS"
         .Range("A3").Font.Bold = True
         .Range("A3").Font.Color = RGB(0, 80, 0)
         Dim regs As Variant: regs = Array("EAX", "EBX", "ECX", "EDX", "ESI", "EDI", "EBP", "ESP")
         Dim i As Integer
         For i = 0 To 7
-            .Cells(5 + i, "A").Value = regs(i)
-            .Cells(5 + i, "B").Value = 0
+            .Cells(5 + i, "A").value = regs(i)
+            .Cells(5 + i, "B").value = 0
         Next i
         .Range("A5:B12").Borders.LineStyle = xlContinuous
         .Range("A5:B12").Interior.Color = RGB(240, 255, 240)
         
         ' === FLAGS (centro-izquierda) ===
-        .Range("D3").Value = "FLAGS"
+        .Range("D3").value = "FLAGS"
         .Range("D3").Font.Bold = True
         .Range("D3").Font.Color = RGB(120, 0, 0)
         Dim flags As Variant: flags = Array("ZF", "SF", "CF", "OF", "PF", "AF")
         For i = 0 To 5
-            .Cells(5 + i, "D").Value = flags(i)
-            .Cells(5 + i, "E").Value = "0"
+            .Cells(5 + i, "D").value = flags(i)
+            .Cells(5 + i, "E").value = "0"
         Next i
         .Range("D5:E10").Borders.LineStyle = xlContinuous
         .Range("D5:E10").Interior.Color = RGB(255, 240, 240)
         
         ' === ALU (centro-derecha) ===
-        .Range("G3").Value = "ALU"
+        .Range("G3").value = "ALU"
         .Range("G3").Font.Bold = True
         .Range("G3").Font.Color = RGB(100, 50, 0)
-        .Range("G5").Value = "Operación:"
-        .Range("G6").Value = "Op1:"
-        .Range("G7").Value = "Op2:"
-        .Range("G8").Value = "Resultado:"
-        .Range("H5:H8").Value = "-"
+        .Range("G5").value = "Operación:"
+        .Range("G6").value = "Op1:"
+        .Range("G7").value = "Op2:"
+        .Range("G8").value = "Resultado:"
+        .Range("H5:H8").value = "-"
         .Range("G5:H8").Borders.LineStyle = xlContinuous
         .Range("G5:H8").Interior.Color = RGB(255, 250, 240)
         
         ' === UNIDAD DE CONTROL (derecha) ===
-        .Range("K3").Value = "UNIDAD DE CONTROL"
+        .Range("K3").value = "UNIDAD DE CONTROL"
         .Range("K3").Font.Bold = True
         .Range("K3").Font.Color = RGB(80, 0, 80)
-        .Range("K5").Value = "Etapa:"
-        .Range("L5").Value = "Idle"
-        .Range("K6").Value = "Instrucción:"
-        .Range("L6").Value = "-"
+        .Range("K5").value = "Etapa:"
+        .Range("L5").value = "Idle"
+        .Range("K6").value = "Instrucción:"
+        .Range("L6").value = "-"
         .Range("K5:L6").Borders.LineStyle = xlContinuous
         .Range("K5:L6").Interior.Color = RGB(250, 240, 255)
         
@@ -102,7 +102,7 @@ Public Sub ConfigurarInterfaz()
         End With
         
         .Columns("A:Z").ColumnWidth = 12
-        .Rows("1:30").RowHeight = 20
+        .ROWS("1:30").RowHeight = 20
     End With
 End Sub
 Sub Simulador_Paso()

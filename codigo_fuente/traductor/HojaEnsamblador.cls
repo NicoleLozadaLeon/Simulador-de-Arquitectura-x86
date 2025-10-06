@@ -11,7 +11,7 @@ Option Explicit
 
 Private regEAX As Long, regEBX As Long, regECX As Long, regEDX As Long
 Private instrucciones As Collection
-Private instruccionActual As Long
+Private InstruccionActual As Long
 Private Sub Worksheet_Activate()
     Call ConfigurarHoja
 End Sub
@@ -21,7 +21,7 @@ Public Sub ConfigurarHoja()
         
         ' === TÍTULO ===
         .Range("A1:N1").Merge
-        .Range("A1").Value = "SIMULADOR DE C A ENSAMBLADOR x86"
+        .Range("A1").value = "SIMULADOR DE C A ENSAMBLADOR x86"
         .Range("A1").Font.Size = 16
         .Range("A1").Font.Bold = True
         .Range("A1").HorizontalAlignment = xlCenter
@@ -29,10 +29,10 @@ Public Sub ConfigurarHoja()
         .Range("A1").Font.Color = RGB(255, 255, 255)
         
         ' === ENTRADA DE CÓDIGO C ===
-        .Range("A3").Value = "Ingresa código C simple:"
+        .Range("A3").value = "Ingresa código C simple:"
         .Range("A3").Font.Bold = True
         .Range("A3").Font.Color = RGB(0, 80, 150)
-        .Range("A4").Value = "// Ej: a = 5; b = a + 3;"
+        .Range("A4").value = "// Ej: a = 5; b = a + 3;"
         .Range("A4").Font.Italic = True
         .Range("A4").Font.Size = 9
         .Range("A4").Font.Color = RGB(100, 100, 100)
@@ -57,7 +57,7 @@ Public Sub ConfigurarHoja()
         End With
         
         ' === SALIDA: ENSAMBLADOR ===
-        .Range("F3").Value = "Código Ensamblador x86:"
+        .Range("F3").value = "Código Ensamblador x86:"
         .Range("F3").Font.Bold = True
         .Range("F3").Font.Color = RGB(0, 100, 0)
         .Range("F5:I15").Merge
@@ -83,22 +83,22 @@ Public Sub ConfigurarHoja()
         End With
         
         ' === REGISTROS ===
-        .Range("K3").Value = "Registros (Estado):"
+        .Range("K3").value = "Registros (Estado):"
         .Range("K3").Font.Bold = True
         .Range("K3").Font.Color = RGB(150, 0, 0)
-        .Range("K5").Value = "EAX:": .Range("L5").Value = 0
-        .Range("K6").Value = "EBX:": .Range("L6").Value = 0
-        .Range("K7").Value = "ECX:": .Range("L7").Value = 0
-        .Range("K8").Value = "EDX:": .Range("L8").Value = 0
+        .Range("K5").value = "EAX:": .Range("L5").value = 0
+        .Range("K6").value = "EBX:": .Range("L6").value = 0
+        .Range("K7").value = "ECX:": .Range("L7").value = 0
+        .Range("K8").value = "EDX:": .Range("L8").value = 0
         .Range("K5:L8").Borders.LineStyle = xlContinuous
         .Range("K5:L8").Interior.Color = RGB(255, 245, 245)
         
         ' === INSTRUCCIÓN ACTUAL ===
-        .Range("K10").Value = "Instrucción:"
+        .Range("K10").value = "Instrucción:"
         .Range("L10:N12").Merge
         .Range("L10").Interior.Color = RGB(230, 230, 250)
         .Range("L10").Borders.LineStyle = xlContinuous
-        .Range("L10").Value = "(Ninguna)"
+        .Range("L10").value = "(Ninguna)"
         
         .Columns("A:N").ColumnWidth = 12
     End With
@@ -108,26 +108,26 @@ Public Property Get RegistroEBX() As Long: RegistroEBX = regEBX: End Property
 Public Property Get RegistroECX() As Long: RegistroECX = regECX: End Property
 Public Property Get RegistroEDX() As Long: RegistroEDX = regEDX: End Property
 Public Sub ActualizarRegistrosEnHoja()
-    Me.Range("L5").Value = regEAX
-    Me.Range("L6").Value = regEBX
-    Me.Range("L7").Value = regECX
-    Me.Range("L8").Value = regEDX
+    Me.Range("L5").value = regEAX
+    Me.Range("L6").value = regEBX
+    Me.Range("L7").value = regECX
+    Me.Range("L8").value = regEDX
 End Sub
 Public Sub MostrarInstruccion(lineaASM As String)
-    Me.Range("L10").Value = lineaASM
+    Me.Range("L10").value = lineaASM
 End Sub
 Public Function ObtenerCodigoC() As String
-    ObtenerCodigoC = Trim(Me.Range("A5").Value)
+    ObtenerCodigoC = Trim(Me.Range("A5").value)
 End Function
 Public Sub MostrarEnsamblador(codigo As String)
-    Me.Range("F5").Value = codigo
+    Me.Range("F5").value = codigo
 End Sub
 Public Sub ReiniciarSimulacion()
     regEAX = 0: regEBX = 0: regECX = 0: regEDX = 0
     Set instrucciones = New Collection
-    instruccionActual = 0
+    InstruccionActual = 0
     ActualizarRegistrosEnHoja
-    Me.Range("L10").Value = "(Listo para ejecutar)"
+    Me.Range("L10").value = "(Listo para ejecutar)"
 End Sub
 Public Sub AgregarInstrucciones(lineas() As String)
     Dim i As Long
@@ -138,18 +138,18 @@ Public Sub AgregarInstrucciones(lineas() As String)
     Next i
 End Sub
 Public Function ObtenerSiguienteInstruccion() As String
-    If instrucciones Is Nothing Or instruccionActual >= instrucciones.Count Then
+    If instrucciones Is Nothing Or InstruccionActual >= instrucciones.count Then
         ObtenerSiguienteInstruccion = ""
     Else
-        instruccionActual = instruccionActual + 1
-        ObtenerSiguienteInstruccion = instrucciones(instruccionActual)
+        InstruccionActual = InstruccionActual + 1
+        ObtenerSiguienteInstruccion = instrucciones(InstruccionActual)
     End If
 End Function
 Public Function HayMasInstrucciones() As Boolean
     If instrucciones Is Nothing Then
         HayMasInstrucciones = False
     Else
-        HayMasInstrucciones = (instruccionActual < instrucciones.Count)
+        HayMasInstrucciones = (InstruccionActual < instrucciones.count)
     End If
 End Function
 Public Sub EjecutarInstruccion(lineaASM As String)

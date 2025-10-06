@@ -2,7 +2,7 @@ Attribute VB_Name = "ModuloCiclo"
 Option Explicit
 
 Private InstruccionActual As String
-Private opcode As String
+Private Opcode As String
 Private operandos As String
 Private Memoria(0 To MEM_SIZE - 1) As String
 Public Sub EjecutarCiclo()
@@ -26,18 +26,18 @@ Private Sub Decode()
     If Len(InstruccionActual) > 0 Then
         partes = Split(InstruccionActual, " ")
         If UBound(partes) >= 0 Then
-            opcode = partes(0)
+            Opcode = partes(0)
             If UBound(partes) >= 1 Then
                 operandos = partes(1)
             Else
                 operandos = ""
             End If
         Else
-            opcode = ""
+            Opcode = ""
             operandos = ""
         End If
     Else
-        opcode = ""
+        Opcode = ""
         operandos = ""
     End If
 End Sub

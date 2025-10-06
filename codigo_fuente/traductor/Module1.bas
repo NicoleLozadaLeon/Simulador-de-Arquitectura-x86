@@ -98,9 +98,9 @@ Siguiente:
 End Function
 Function MapearVar(nombreVar As String) As String
     Select Case nombreVar
-        Case "a": MapearVar = "dword ptr [a]"
-        Case "b": MapearVar = "dword ptr [b]"
-        Case "c": MapearVar = "dword ptr [c]"
+        Case "a": MapearVar = "dword [a]"
+        Case "b": MapearVar = "dword [b]"
+        Case "c": MapearVar = "dword [c]"
         Case Else: MapearVar = nombreVar
     End Select
 End Function
