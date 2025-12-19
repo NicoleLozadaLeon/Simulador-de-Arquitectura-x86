@@ -103,3 +103,5 @@ Simulador-de-Arquitectura-x86/
 [Google Docs](https://docs.google.com/document/d/12qxGSUhsfWce7u_80ljQAPUH7FlSxdMcGey3gcDZ-do/edit?usp=sharing)
 ### Presentación: 
 [Canvas](https://www.canva.com/design/DAG7zXQHzOw/kvmCdCCMAJNdkTxkVYQPtw/edit?utm_content=DAG7zXQHzOw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+### Gestion de tareas: 
+[Kanban](https://github.com/users/arianylopez/projects/8)
